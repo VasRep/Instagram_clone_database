@@ -11,17 +11,7 @@ The goal is to simulate the structure and functionality of a social media platfo
 ## 🧮 Dataset Creation
 
 The dataset was inspired by typical Instagram user interactions — users, photos, likes, comments, and follows.  
-All CSV files used to populate the database were **generated with the assistance of ChatGPT (OpenAI)**, providing realistic sample data for testing and demonstration.
-
-### Dataset Folder Structure
-
-dataset/
-├── users.csv # Basic user info (id, username, created_at, age)
-├── photos.csv # Photos uploaded by users
-├── likes.csv # Records of likes per photo
-├── comments.csv # User comments on photos
-├── follows.csv # Following relationships between users
-└── keywords.csv # JSON-style keywords (used for preprocessing)
+All CSV files in the dataset folder, which are used to populate the database, were **generated with the assistance of ChatGPT (OpenAI)**, providing realistic sample data for testing and demonstration.
 
 ---
 
@@ -39,13 +29,6 @@ It normalizes this structure into two flat relational tables — a process simil
   - `tags.csv` — contains tag (keyword) IDs and names  
   - `photo_tags.csv` — maps photos to their corresponding tags
 - Saves the resulting CSVs to the `/out/` folder.
-
-### Output Example
-
-out/
-├── tags.csv
-└── photo_tags.csv
-
 
 The new CSVs are then used in the database to define the **many-to-many relationship** between photos and tags.
 
@@ -77,32 +60,32 @@ All tables were designed by the author to model realistic Instagram data behavio
 The `sql/` folder contains organized scripts for schema creation, constraint setup, triggers, views, and analytical queries.
 
 sql/
-├── create_database.sql # Defines the tables and initial schema
-├── alter_tables.sql # Adds primary keys, unique constraints, FKs, and cascading rules
-├── triggers.sql # Implements business logic automation
-├── views.sql # Defines reusable database views (e.g. tag statistics)
-└── queries.sql # Analytical queries, CTEs, and reports
+1.create_database.sql # Defines the tables and initial schema
+2.alter_tables.sql # Adds primary keys, unique constraints, FKs, and cascading rules
+3.triggers.sql # Implements business logic automation
+4.views.sql # Defines reusable database views (e.g. tag statistics)
+5.queries.sql # Analytical queries, CTEs, and reports
 
 
-### 📜 `create_database.sql`
+###  `create_database.sql`
 Defines all tables, including:
 - `users`, `photos`, `likes`, `comments`, `follows`, `unfollows`, `tags`, and `photo_tags`.
 
-### 🔐 `alter_tables.sql`
+###  `alter_tables.sql`
 Adds relational integrity:
 - Primary and foreign keys
 - `ON DELETE CASCADE` relationships to maintain referential consistency
 
-### 👁️ `views.sql`
+###  `views.sql`
 Defines database **views** for easier reporting.  
 
-### `triggers.sql
+### `triggers.sql`
 Implements automatic rules via triggers:
 must_be_adult → blocks inserting users younger than 18
 prevent_self_follows → prevents users from following themselves
 create_unfollow → automatically records unfollows into unfollows table
 
-### `queries.sql
+### `queries.sql`
 Contains SQL analytics and insights using aggregations, CTEs, and window functions:
 5 oldest users
 Most popular photo
@@ -123,11 +106,12 @@ Load CSV files from /dataset/ into MySQL tables using Workbench
 
 Run SQL Scripts from sql folder
 Execute in order:
-1.create_database.sql;
-2.alter_tables.sql;
-3.triggers.sql;
-4.views.sql;
-5queries.sql;
+1.create_database.sql
+2.alter_tables.sql
+3.triggers.sql
+4.views.sql
+5queries.sql
 
 🏁 Credits
+
 Sample CSV data generation: Assisted by ChatGPT (OpenAI)
