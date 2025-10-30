@@ -80,10 +80,13 @@ Adds relational integrity:
 Defines database **views** for easier reporting.  
 
 ### `triggers.sql`
-Implements automatic rules via triggers:
-must_be_adult → blocks inserting users younger than 18
-prevent_self_follows → prevents users from following themselves
-create_unfollow → automatically records unfollows into unfollows table
+
+| Trigger Name | Description |
+|---------------|-------------|
+| **must_be_adult** | Blocks inserting users younger than 18 |
+| **prevent_self_follows** | Prevents users from following themselves |
+| **create_unfollow** | Automatically records unfollows into the `unfollows` table |
+
 
 ### `queries.sql`
 Contains SQL analytics and insights using aggregations, CTEs, and window functions:
