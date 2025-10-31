@@ -59,13 +59,20 @@ All tables were designed by the author to model realistic Instagram data behavio
 
 The `sql/` folder contains organized scripts for schema creation, constraint setup, triggers, views, and analytical queries.
 
-sql/
-1.create_database.sql # Defines the tables and initial schema
-2.alter_tables.sql # Adds primary keys, unique constraints, FKs, and cascading rules
-3.triggers.sql # Implements business logic automation
-4.views.sql # Defines reusable database views (e.g. tag statistics)
-5.queries.sql # Analytical queries, CTEs, and reports
+1. **create_database.sql**  
+   Defines the tables and initial schema.
 
+2. **alter_tables.sql**  
+   Adds primary keys, unique constraints, FKs, and cascading rules.
+
+3. **triggers.sql**  
+   Implements business logic automation.
+
+4. **views.sql**  
+   Defines reusable database views (e.g., tag statistics).
+
+5. **queries.sql**  
+   Analytical queries, CTEs, and reports.
 
 ###  `create_database.sql`
 Defines all tables, including:
@@ -90,30 +97,44 @@ Defines database **views** for easier reporting.
 
 ### `queries.sql`
 Contains SQL analytics and insights using aggregations, CTEs, and window functions:
-5 oldest users
-Most popular photo
-Average posts per user
-Top 5 hashtags
-Users who liked every photo
-Top 3 most-liked photos per user (DENSE_RANK())
+1. **5 Oldest Users**  
+2. **Most Popular Photo**  
+3. **Average Posts Per User**  
+4. **Top 5 Hashtags**  
+5. **Users Who Liked Every Photo**  
+6. **Top 3 Most-Liked Photos Per User (Using `DENSE_RANK()`)**  
 
+---
+  
 📊 Entity Relationship Diagram (ERD)
 
 The file ERD.pdf visualizes the database schema — showing all entities, relationships, and key constraints.
 
-🚀 How to Run the Project
+---
 
-Import Data
+## 🚀 How to Run the Project
 
-Load CSV files from /dataset/ into MySQL tables using Workbench
+Follow these steps to set up and run the project:
 
-Run SQL Scripts from sql folder
-Execute in order:
-1.create_database.sql
-2.alter_tables.sql
-3.triggers.sql
-4.views.sql
-5queries.sql
+---
+
+### 1. Import Data
+- Prepare your MySQL environment (e.g., MySQL Workbench or command line).
+- Use the **"Table Data Import Wizard"** in MySQL Workbench to load all CSV files from the `/dataset/` directory into the corresponding database tables.
+
+---
+
+### 2. Run SQL Scripts
+Execute the SQL scripts in the correct order from the `/sql/` folder to build and initialize the database.
+
+**Execution Order:**
+1. **create_database.sql** — Defines tables and the initial database schema.  
+2. **alter_tables.sql** — Adds primary keys, unique constraints, foreign keys, and cascading rules.  
+3. **triggers.sql** — Implements automation.  
+4. **views.sql** — Defines reusable database views (e.g., tag statistics).  
+5. **queries.sql** — Contains analytical queries, CTEs, and reports.
+
+---
 
 🏁 Credits
 
