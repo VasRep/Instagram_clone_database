@@ -121,8 +121,6 @@ Follow these steps to set up and run the project:
 - Run the script **`create_database.sql`** from the `/sql/` folder.  
   This defines the initial database structure.
 
----
-
 ### 2. Import Data
 - After the tables are created, use the **“Table Data Import Wizard”** in MySQL Workbench.  
 - Import all CSV files from the `/dataset/` directory into their corresponding tables:  
@@ -133,8 +131,6 @@ Follow these steps to set up and run the project:
   - `follows.csv` → `follows`  
   - `tags.csv` → `tags` 
   - `photo_tags.csv` → `photo_tags`  
-
----
 
 ### 3. Run SQL Scripts
 Execute the SQL scripts in the correct order from the `/sql/` folder to build and initialize the database.
