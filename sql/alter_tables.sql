@@ -45,7 +45,6 @@ ALTER TABLE photo_tags
 ADD FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE;
 
 -- Setting constraints for likes table
-
 ALTER TABLE likes 
 MODIFY column user_id INT NOT NULL;
 
@@ -86,7 +85,7 @@ ADD FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE;
 ALTER TABLE comments
 ADD FOREIGN KEY (photo_id) REFERENCES photos(id) ON DELETE CASCADE;
 
--- Creating this table for keep tracking unfollowing
+-- Table to keep track of users who unfollow others
 CREATE TABLE unfollows (
     follower_id INT NOT NULL,
     followee_id INT NOT NULL,

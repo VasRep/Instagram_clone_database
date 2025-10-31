@@ -116,23 +116,34 @@ The file ERD.pdf visualizes the database schema — showing all entities, relati
 
 Follow these steps to set up and run the project:
 
+### 1. Create the Database Schema
+- Open MySQL Workbench (or your preferred SQL client).
+- Run the script **`create_database.sql`** from the `/sql/` folder.  
+  This defines the initial database structure.
+
 ---
 
-### 1. Import Data
-- Prepare your MySQL environment (e.g., MySQL Workbench or command line).
-- Use the **"Table Data Import Wizard"** in MySQL Workbench to load all CSV files from the `/dataset/` directory into the corresponding database tables.
+### 2. Import Data
+- After the tables are created, use the **“Table Data Import Wizard”** in MySQL Workbench.  
+- Import all CSV files from the `/dataset/` directory into their corresponding tables:  
+  - `users.csv` → `users`  
+  - `photos.csv` → `photos`  
+  - `likes.csv` → `likes`  
+  - `comments.csv` → `comments`  
+  - `follows.csv` → `follows`  
+  - `tags.csv` → `tags` 
+  - `photo_tags.csv` → `photo_tags`  
 
 ---
 
-### 2. Run SQL Scripts
+### 3. Run SQL Scripts
 Execute the SQL scripts in the correct order from the `/sql/` folder to build and initialize the database.
 
 **Execution Order:**
-1. **create_database.sql** — Defines tables and the initial database schema.  
-2. **alter_tables.sql** — Adds primary keys, unique constraints, foreign keys, and cascading rules.  
-3. **triggers.sql** — Implements automation.  
-4. **views.sql** — Defines reusable database views (e.g., tag statistics).  
-5. **queries.sql** — Contains analytical queries, CTEs, and reports.
+1. **alter_tables.sql** — Adds primary keys, unique constraints, foreign keys, and cascading rules.  
+2. **triggers.sql** — Implements automation.  
+3. **views.sql** — Defines reusable database views (e.g. tag_stats).  
+4. **queries.sql** — Contains analytical queries, CTEs, and reports.
 
 ---
 
