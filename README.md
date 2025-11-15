@@ -119,11 +119,11 @@ Follow these steps to set up and run the project:
 ### 1. Create the Database Schema
 - Open MySQL Workbench (or your preferred SQL client).
 - Run the script **`create_database.sql`** from the `/sql/` folder.  
-  This defines the initial database structure.
+  This creates the initial database structure.
 
 ### 2. Import Data
-- After the tables are created, use the **“Table Data Import Wizard”** in MySQL Workbench.  
-- Import all CSV files from the `/dataset/` directory into their corresponding tables:  
+- Use the **“Table Data Import Wizard”** in MySQL Workbench to create the tables.  
+- Import all CSV files from the `/dataset/` and `/out/` folders into their corresponding tables:  
   - `users.csv` → `users`  
   - `photos.csv` → `photos`  
   - `likes.csv` → `likes`  
@@ -133,7 +133,7 @@ Follow these steps to set up and run the project:
   - `photo_tags.csv` → `photo_tags`  
 
 ### 3. Run SQL Scripts
-Execute the SQL scripts in the correct order from the `/sql/` folder to build and initialize the database.
+Execute the SQL scripts in the correct order from the `/sql/` folder to apply fixes and run the SQL code.
 
 **Execution Order:**
 1. **alter_tables.sql** — Adds primary keys, unique constraints, foreign keys, and cascading rules.  
