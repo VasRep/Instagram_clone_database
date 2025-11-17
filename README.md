@@ -7,7 +7,7 @@ The goal is to simulate the structure and functionality of a social media platfo
 
 **Technologies Used:**
 
--   **MySQL & MySQL Workbench** – Use for database design, schema creation, constraints, triggers, views and analytical queries.
+-   **MySQL & MySQL Workbench** – Used for database design, schema creation, constraints, triggers, views and analytical queries.
     
 -   **Python**  - Performs data preprocessing using `modifying_keywords.py` by converting the nested `keywords.csv`  from `/in/` into the normalized relational tables `tags.csv` and `photo_tags.csv`,which are used by the database.The latter two CSVs are saved to the 	`/out/` folder.
 
@@ -15,7 +15,7 @@ The goal is to simulate the structure and functionality of a social media platfo
 
 -   Use **Pandas** and **NumPy** to perform deeper data analysis and quality checks.
     
--   Apply **Matplotlib** for visual insights..
+-   Use **Matplotlib** for visual insights.
     
 -   Connect the MySQL database to **Power BI** and build interactive dashboards.
 
